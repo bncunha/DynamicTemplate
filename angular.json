@@ -23,7 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -52,6 +52,18 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "cinemark": {
+              "fileReplacements": [
+                {
+                  "replace": "src/styles.scss",
+                  "with": "projects/cinemark/styles/global.scss"
+                },
+                {
+                  "replace": "src/config-template/mapping-components.ts",
+                  "with": "projects/cinemark/src/config-template/mapping-components.ts"
+                }
+              ]
             }
           }
         },
@@ -63,6 +75,9 @@
           "configurations": {
             "production": {
               "browserTarget": "OneProject:build:production"
+            },
+            "cinemark": {
+              "browserTarget": "OneProject:build:cinemark"
             }
           }
         },
@@ -80,7 +95,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [],
             "assets": [
@@ -124,6 +139,76 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "cinemark": {
+      "root": "projects/cinemark",
+      "sourceRoot": "projects/cinemark/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/cinemark/tsconfig.lib.json",
+            "project": "projects/cinemark/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/cinemark/src/test.ts",
+            "tsConfig": "projects/cinemark/tsconfig.spec.json",
+            "karmaConfig": "projects/cinemark/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/cinemark/tsconfig.lib.json",
+              "projects/cinemark/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "dynamic-component": {
+      "root": "projects/dynamic-component",
+      "sourceRoot": "projects/dynamic-component/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/dynamic-component/tsconfig.lib.json",
+            "project": "projects/dynamic-component/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/dynamic-component/src/test.ts",
+            "tsConfig": "projects/dynamic-component/tsconfig.spec.json",
+            "karmaConfig": "projects/dynamic-component/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/dynamic-component/tsconfig.lib.json",
+              "projects/dynamic-component/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]

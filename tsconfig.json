@@ -17,6 +17,20 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "cinemark": [
+        "dist/cinemark"
+      ],
+      "cinemark/*": [
+        "dist/cinemark/*"
+      ],
+      "dynamic-component": [
+        "dist/dynamic-component"
+      ],
+      "dynamic-component/*": [
+        "dist/dynamic-component/*"
+      ]
+    }
   }
 }
