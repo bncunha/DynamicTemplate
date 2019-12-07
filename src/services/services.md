@@ -1,0 +1,1 @@
+Esta pasta ficarão todos os services que fazem chamadas a API

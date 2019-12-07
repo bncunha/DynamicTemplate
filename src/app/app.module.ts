@@ -7,7 +7,7 @@ import { DynamicContentModule } from 'projects/dynamic-component/src/public-api'
 import { HeaderCinemarkComponent } from 'projects/cinemark/src/lib/header-cinemark/header-cinemark.component';
 import { CinemarkModule } from 'projects/cinemark/src/public-api';
 import { DynamicService } from 'projects/dynamic-component/src/lib/dynamic/dynamic.service';
-import { CustomDynamicContentService } from 'src/config-template/custom-dynamic-content.service';
+import { CustomDynamicContentService } from 'src/config/custom-dynamic-content.service';
 
 
 @NgModule({

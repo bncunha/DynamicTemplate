@@ -3,7 +3,7 @@ import {  MapComponents } from '../../interfaces/map-components.interface';
 import { DynamicService } from './dynamic.service';
 
 @Directive({
-  selector: '[libDynamic]'
+  selector: '[dynamic]'
 })
 export class DynamicDirective implements OnInit, OnDestroy {
   @Input() type: string;

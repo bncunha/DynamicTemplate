@@ -60,8 +60,8 @@
                   "with": "projects/cinemark/styles/global.scss"
                 },
                 {
-                  "replace": "src/config-template/mapping-components.ts",
-                  "with": "projects/cinemark/src/config-template/mapping-components.ts"
+                  "replace": "src/config/mapping-components.ts",
+                  "with": "projects/cinemark/config/mapping-components.ts"
                 }
               ]
             }

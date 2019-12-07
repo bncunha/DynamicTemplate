@@ -1,0 +1,1 @@
+Ficarão apenas os arquivos que estão relacionadas as entidades do projeto
